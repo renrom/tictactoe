@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,50 @@
     <script src="./scripts/tictactoe.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <div class="header">
+            <p>TicTacToe</p>
+        </div>
+        <div class="playground">
+            <div class="playbox">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+
+
+            <dialog open class="sign-in">
+                <form class="sign-in">
+                    <div class="formlayout">
+                        <div class="formheader">
+                            <h2>Welcome to the most famous game on the internet!</h2>
+                            <p>Please fill in the form to continue:</p>
+                            <br>
+                        </div>
+                        <div class="player1">
+                            <label for="player1" class="">Player name 1: </label>
+                            <input type="text" name="player1" id="player1" placeholder="Mr. Pacman" required />
+                        </div>
+                        <div class="player2">
+                            <label for="player2" class="">Player name 2: </label>
+                            <input type="text" name="player2" id="player2" placeholder="Ms. Pacman" required />
+                        </div>
+                        <div class="startgamewrap">
+                            <button id="startgame">Let the game begin!</button>
+                        </div>
+                    </div>
+                </form>
+
+            </dialog>
 </body>
+
 </html>

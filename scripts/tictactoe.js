@@ -101,9 +101,7 @@ const gameBoard = () => {
         }
         return (win);
     }
-
     return { reset, displayBoard, updateCell, takeTurn };
-
 }
 
 const takeTurn = (xCord, yCord) => {
@@ -116,7 +114,6 @@ const takeTurn = (xCord, yCord) => {
 
 const createPlayer = (name, marker) => {
     return { name, marker };
-
 }
 
 //function startGame() {
