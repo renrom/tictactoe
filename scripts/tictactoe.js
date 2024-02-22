@@ -18,7 +18,6 @@ const gameBoard = () => {
     const reset = () => {
 
         _boardlayout.length = 0;
-
         const rows = 3;
         const columns = 3;
 
@@ -43,12 +42,20 @@ const gameBoard = () => {
     // Also keep track of the number of sets. if 9 then game is over
     const updateCell = (player, marker, x, y) => {
         if (_boardlayout[x][y].length === 0) {
-            console.log('zet!')
+            
             countSet++;
 
             flipTurn();
 
             _boardlayout[x][y] = marker;
+
+            boardId = "row"+x+"col"+y
+            
+            var markerBoard = document.getElementById(boardId);
+
+
+            markerBoard.innerHTML = marker;
+
             winner = checkWin(marker);
 
             if (winner) {
@@ -71,8 +78,7 @@ const gameBoard = () => {
     };
 
     // Take a turn
-    const takeTurn = (xCord, yCord) => {
-        console.log(` Playerturn: ${playersTurn}`)
+    const takeTurn = (player1, player2, xCord, yCord) => {
 
         if (playersTurn === 1) {
             updateCell(player1.name, player1.marker, xCord, yCord)
@@ -104,37 +110,91 @@ const gameBoard = () => {
     return { reset, displayBoard, updateCell, takeTurn };
 }
 
-const takeTurn = (xCord, yCord) => {
-    if (playersTurn === 1) {
-        updateCell(player1.name, player1.marker, xCord, yCord)
-    } else {
-        updateCell(player2.name, player2.marker, xCord, yCord)
-    };
-}
-
 const createPlayer = (name, marker) => {
     return { name, marker };
 }
 
-//function startGame() {
-const board = gameBoard();
-board.reset();
+const startGame = () => {
+
+    const board = gameBoard();
+    board.reset();
+    const dialog = document.getElementById("signinDialog");
+    const btnStartGame = document.querySelector("#startgame")
+    const row0col0 = document.getElementById("row0col0");
+    const row0col1 = document.getElementById("row0col1");
+    const row0col2 = document.getElementById("row0col2");
+    const row1col0 = document.getElementById("row1col0");
+    const row1col1 = document.getElementById("row1col1");
+    const row1col2 = document.getElementById("row1col2");
+    const row2col0 = document.getElementById("row2col0");
+    const row2col1 = document.getElementById("row2col1");
+    const row2col2 = document.getElementById("row2col2");
+    
+
+    let player1 = [];
+    let player2 = [];
+
+    dialog.showModal();
+
+    btnStartGame.addEventListener("click", (e) => {
+        playerName1 = document.getElementById("player1").value;
+        playerName2 = document.getElementById("player2").value;
+
+        e.preventDefault();
+        player1 = createPlayer(playerName1, "X");
+        player2 = createPlayer(playerName2, "O");
+
+        dialog.close();
+
+    });
 
 
-playerName = "Rene";
-playerTag = "X";
+    const rows = 3;
+    const columns = 3;
 
-const player1 = createPlayer(playerName, playerTag);
+    row0col0.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 0,0);
+    });
+    row0col1.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 0,1);
+    });
+    row0col2.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 0,2);
+    });
+    row1col0.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 1,0);
+    });
+    row1col1.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 1,1);
+    });
+    row1col2.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 1,2);
+    });
+    row2col0.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 2,0);
+    });
+    row2col1.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 2,1);
+    });
+    row2col2.addEventListener("click", () => {
+        board.takeTurn(player1, player2, 2,2);
+    });
 
-playerName = "Rita";
-playerTag = "O";
 
-const player2 = createPlayer(playerName, playerTag);
-
-//}
+};
 
 
-//startGame();
+
+
+
+
+function initGame() {
+    const board = gameBoard();
+    board.reset();
+    askPlayers();
+}
+
+startGame();
 
 
 

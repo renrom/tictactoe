@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicTacToe</title>
-    <script src="./scripts/tictactoe.js"></script>
+    <script src="./scripts/tictactoe.js" defer></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -17,31 +17,31 @@
         </div>
         <div class="playground">
             <div class="playbox">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
+                <button id="row0col0" class="box"></button>
+                <button id="row0col1" class="box"></button>
+                <button id="row0col2" class="box"></button>
+                <button id="row1col0" class="box"></button>
+                <button id="row1col1" class="box"></button>
+                <button id="row1col2" class="box"></button>
+                <button id="row2col0" class="box"></button>
+                <button id="row2col1" class="box"></button>
+                <button id="row2col2" class="box"></button>
+                
             </div>
-
-
-            <dialog open class="sign-in">
+            <dialog id="signinDialog">
+            
                 <form class="sign-in">
                     <div class="formlayout">
                         <div class="formheader">
-                            <h2>Welcome to the most famous game on the internet!</h2>
+                            <h2>Welcome</h2>
                             <p>Please fill in the form to continue:</p>
                             <br>
                         </div>
-                        <div class="player1">
+                        <div class="dialogrow player1">
                             <label for="player1" class="">Player name 1: </label>
                             <input type="text" name="player1" id="player1" placeholder="Mr. Pacman" required />
                         </div>
-                        <div class="player2">
+                        <div class="dialogrow player2">
                             <label for="player2" class="">Player name 2: </label>
                             <input type="text" name="player2" id="player2" placeholder="Ms. Pacman" required />
                         </div>
@@ -50,8 +50,9 @@
                         </div>
                     </div>
                 </form>
-
             </dialog>
+
+            
 </body>
 
 </html>
