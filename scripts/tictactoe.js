@@ -77,7 +77,7 @@ const gameBoard = () => {
             } else {
                 updateCell(player2.name, player2.marker, xCord, yCord)
                 if (!gameOver) {
-                    showScoreBoard(player2)
+                    showScoreBoard(player1)
                 }
             }
         }
