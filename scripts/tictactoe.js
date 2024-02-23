@@ -47,13 +47,16 @@ const gameBoard = () => {
 
             if (winner) {
                 
-                showWinnerScoreBoard(player, false)
+                showEndScoreBoard(player, false)
                 gameOver = true;
             }
             if (countSet === 9 & !winner) {
-                showTieScoreBoard('', true);
+                showEndScoreBoard('', true);
                 gameOver = true;
             }
+            return true;
+        } else {
+            return false
         };
     }
 
@@ -70,16 +73,19 @@ const gameBoard = () => {
     const takeTurn = (player1, player2, xCord, yCord) => {
         if (!gameOver) {
             if (playersTurn === 1) {
-                updateCell(player1.name, player1.marker, xCord, yCord)
-                if (!gameOver) {
-                    showScoreBoard(player2)
+                
+                if (updateCell(player1.name, player1.marker, xCord, yCord)) {
+                    if (!gameOver) {
+                        showScoreBoard(player2)
+                    }
                 }
+
             } else {
-                updateCell(player2.name, player2.marker, xCord, yCord)
+                if (updateCell(player2.name, player2.marker, xCord, yCord)) {
                 if (!gameOver) {
                     showScoreBoard(player1)
                 }
-            }
+            }}
         }
     }
 
@@ -115,7 +121,7 @@ const showScoreBoard = (player) => {
 }
 
 // Show the result! 
-const showWinnerScoreBoard = (player, tie) => {
+const showEndScoreBoard = (player, tie) => {
     const endScoreBoardText = document.querySelector(".scoreboard");
     const btnRestartGame = document.querySelector("#btnrestart");
     btnRestartGame.style.display = "block";
