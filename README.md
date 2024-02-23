@@ -6,6 +6,9 @@ Tic Tac Toe!
 
 Assignment from The Odin Project to create the most famous TicTacToe game
 
+## Visit the game
+
+[Live](https://renrom.github.io/tictactoe/)
 
 ## Features
 
