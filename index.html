@@ -10,10 +10,14 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="header">
-            <p>TicTacToe</p>
+            <p><span id="word1">Tic</span><span id="word2">Tac</span><span id="word3">Toe</span></p>
+        </div>
+        <div class="scoreboard-wrapper">
+            <div class="scoreboard">
+            </div>
+            <button id="btnrestart" type="button">Restart</button>
         </div>
         <div class="playground">
             <div class="playbox">
@@ -26,24 +30,22 @@
                 <button id="row2col0" class="box"></button>
                 <button id="row2col1" class="box"></button>
                 <button id="row2col2" class="box"></button>
-                
             </div>
             <dialog id="signinDialog">
-            
                 <form class="sign-in">
                     <div class="formlayout">
                         <div class="formheader">
-                            <h2>Welcome</h2>
-                            <p>Please fill in the form to continue:</p>
+                            <h2>Welcome!</h2>
+                            <p>Please fill in the form to play:</p>
                             <br>
                         </div>
                         <div class="dialogrow player1">
                             <label for="player1" class="">Player name 1: </label>
-                            <input type="text" name="player1" id="player1" placeholder="Mr. Pacman" required />
+                            <input type="text" name="player1" id="player1"  placeholder="Mr. Pacman" required />
                         </div>
                         <div class="dialogrow player2">
                             <label for="player2" class="">Player name 2: </label>
-                            <input type="text" name="player2" id="player2" placeholder="Ms. Pacman" required />
+                            <input type="text" name="player2" id="player2"  placeholder="Ms. Pacman" required />
                         </div>
                         <div class="startgamewrap">
                             <button id="startgame">Let the game begin!</button>
@@ -51,8 +53,5 @@
                     </div>
                 </form>
             </dialog>
-
-            
 </body>
-
 </html>

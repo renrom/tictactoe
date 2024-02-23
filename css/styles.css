@@ -27,6 +27,16 @@ p {
     src: url("../fonts/magic-retro.ttf");
 }
 
+@font-face {
+    font-family: kodo;
+    src: url("../fonts/kodo.ttf");
+}
+
+@font-face {
+    font-family: marker;
+    src: url("../fonts/marker.ttf");
+}
+
 .container {}
 
 .header {
@@ -41,6 +51,27 @@ p {
     
 }
 
+.scoreboard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 30px 20px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-family: kodo, sans-serif;
+}
+
+#word1 {
+    color: #d73430;
+}
+
+#word2 {
+    color: green;
+}
+
+#word3 {
+    color: blue;
+}
 .playground {
     display: flex;
     justify-content: center;
@@ -48,10 +79,12 @@ p {
 }
 
 .box {
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     background-color: #f1f7f9;
-
+    font-family: marker, 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    color: rgb(60, 10, 100);
 }
 
 .playbox button {
@@ -103,6 +136,7 @@ p {
 
 dialog {
     margin-top:6%;
+    
 
 width: 400px;
 /* From https://css.glass */
@@ -120,6 +154,7 @@ border: 1px solid rgba(210, 222, 234, 0.89);
     align-items: center;
     gap: 30px;
     padding: 10px;
+    color: rgb(7, 7, 92);
        
 }
 
@@ -159,4 +194,19 @@ border: 1px solid rgba(210, 222, 234, 0.89);
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+#btnrestart {
+    margin-left: 20px;
+    border:0;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    color: var(--background);
+    background-color: rgb(39, 39, 153);
+    transition-duration: 1,5s;
+
+
 }
